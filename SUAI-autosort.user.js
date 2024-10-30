@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        SUAI-autosort
-// @version     1.0
+// @version     1.1
 // @description Автоматически сортирует задания в ЛК ГУАП по возрастанию дедалйна
 // @match       https://pro.guap.ru/inside/student/tasks/
 // @icon        https://pro.guap.ru/favicon/favicon.ico
