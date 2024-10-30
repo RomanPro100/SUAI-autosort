@@ -3,6 +3,7 @@
 // @version     1.0
 // @description Автоматически сортирует задания в ЛК ГУАП по возрастанию дедалйна
 // @match       https://pro.guap.ru/inside/student/tasks/
+// @icon        https://pro.guap.ru/favicon/favicon.ico
 // @grant       none
 // @author      RomanPro100
 // @namespace   https://github.com/RomanPro100
