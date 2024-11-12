@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        SUAI-autosort
-// @version     1.2
-// @description Автоматически сортирует задания в ЛК ГУАП по возрастанию дедалйна
+// @version     1.3
+// @description Автоматически сортирует задания в ЛК ГУАП по возрастанию дедлайна
 // @match       https://pro.guap.ru/inside/student/tasks/
 // @icon        https://pro.guap.ru/favicon/favicon.ico
 // @grant       none
@@ -12,11 +12,21 @@
 // ==/UserScript==
 
 url = window.location.href
-if (url.match("sort=")) { return }
 
-sort_query =
-  (url.includes('?') ? '&' : '?')
-  + "sort=t.harddeadline&direction=asc"
-;
+params = {
+  "sort": "t.harddeadline&direction=asc",
+  // "page": "2"
+};
 
-window.location.replace(url + sort_query);
+query = (url.includes('?') ? '&' : '?');
+for (p in params) {
+  if (url.match(p + "=")) {
+    continue;
+  }
+  query += `${p}=${params[p]}&`;
+}
+query = query.substr(0, query.length - 1);
+
+if (query !== "") {
+  window.location.replace(url + query);
+}
